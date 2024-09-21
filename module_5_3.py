@@ -23,31 +23,49 @@ class House:
         return f'Название: {self.name}, количество этажей: {self.number_of_floors}.'
 
     def __eq__(self, other):
-        return self.name != other.name and self.number_of_floors == other.number_of_floors
+        if isinstance(other, House):
+            return self.number_of_floors == other.number_of_floors
+        return NotImplemented
 
     def __lt__(self, other):
-        return self.number_of_floors < other.number_of_floors
+        if isinstance(other, House):
+            return self.number_of_floors < other.number_of_floors
+        return NotImplemented
 
     def __le__(self, other):
-        return self.number_of_floors <= other.number_of_floors
+        if isinstance(other, House):
+            return self.number_of_floors <= other.number_of_floors
+        return NotImplemented
 
     def __gt__(self, other):
-        return self.number_of_floors > other.number_of_floors
+        if isinstance(other, House):
+            return self.number_of_floors > other.number_of_floors
+        return NotImplemented
 
     def __ge__(self, other):
-        return self.number_of_floors <= other.number_of_floors
+        if isinstance(other, House):
+            return self.number_of_floors <= other.number_of_floors
+        return NotImplemented
 
     def __ne__(self, other):
-        return self.number_of_floors != other.number_of_floors
+        if isinstance(other, House):
+            return self.number_of_floors != other.number_of_floors
+        return NotImplemented
 
     def __add__(self, value):
-        return self.number_of_floors + isinstance(value, int)
+        if isinstance(value, int):
+            return self.number_of_floors + value
+        return NotImplemented
 
     def __radd__(self, value):
-        return self.number_of_floors + isinstance(value, int)
+        if isinstance(value, int):
+            return self.number_of_floors + value
+        return NotImplemented
 
     def __iadd__(self, value):
-        return self.number_of_floors + isinstance(value, int)
+        if isinstance(value, int):
+            return self.number_of_floors + value
+        return NotImplemented
 
 
 
